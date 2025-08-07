@@ -1,0 +1,11 @@
+.news-image {
+    width: 180px;
+}
+.news-image {
+    width: 100%;
+}
+.cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+}

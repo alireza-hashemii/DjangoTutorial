@@ -13,3 +13,4 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True) 
     updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(choices=CHOICES, max_length=1)
+    image = models.ImageField(upload_to='news_images')
