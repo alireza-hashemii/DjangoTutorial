@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Tag
+from .models import Blog, Tag, UserMessage
 # Register your models here.
 
 @admin.action(permissions=["change"])
@@ -13,7 +13,7 @@ def make_draft(modeladmin, request, queryset):
 
 class BlogAdmin(admin.ModelAdmin):
     date_hierarchy = "created_at"
-    list_display = ["title", "slug", 'created_at', 'status', 'tags_partition']
+    list_display = ["title", "slug", 'created_at', 'status', 'tags_partition', 'persian_date']
     ordering = ['-created_at']
     empty_value_display = "----"
     list_display_links = ["title"]
@@ -35,3 +35,4 @@ class BlogAdmin(admin.ModelAdmin):
 
 admin.site.register(Blog,BlogAdmin)
 admin.site.register(Tag)
+admin.site.register(UserMessage)
